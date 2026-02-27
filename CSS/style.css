@@ -2,6 +2,16 @@
 
 /* ======== Color Variables ======== */
 :root {
+    /* Capitec Bank Colors */
+    --capitec-blue: #0052A5;
+    --capitec-light-blue: #0072CE;
+    --capitec-accent: #00A3E0;
+    --capitec-dark: #003A70;
+
+    /* FNB Code Academy Colors (subtle) */
+    --fnb-yellow: #FFB700;
+    --fnb-dark: #241F20;
+
     /* Supporting Colors */
     --prmary-dark: #0A1929;
     --primary-blue: #0052A5;
@@ -181,4 +191,136 @@ section {
     height: 4px;
     background: linear-gradient(90deg, var(--capitec-blue), var(--capitec-accent));
     border-radius: 2px;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 25, 41, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo i {
+    color: var(--capitec-accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    padding: 5px 0;
+    font-size: 0.95rem;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--capitec-accent);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.theme-toggle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-primary);
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    transform: rotate(360deg);
+    background: var(--capitec-accent);
+    color: white;
+}
+
+/* Mobile Navigation */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--capitec-blue), var(--capitec-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto 25px;
+    padding: 0 15px;
+}
+
+.current-position {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--capitec-blue), var(--capitec-accent));
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
 }
