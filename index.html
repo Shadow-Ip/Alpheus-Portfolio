@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpheus Lebepe - IT Systems Developer</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <h2 style="color: white; margin-bottom: 10px; font-size: 1.5rem;">Loading Portfolio....</h2>
+        <p style="color: white; font-size: 1rem;">Please wait while we load the content.</p>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">Alpheus Lebepe IT Systems Developer</p>
+    </div>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Header-->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i>
+                <span>M.Lebepe</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contacts">Contacts</a>
+            </nav>
+
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="theme-toggle" id="themToggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown-->
+        <div id="mobileMenu" style="display: none; padding: 20px; background: rgba(10, 25, 41, 0.98); backdrop-filter: blur(10px);">
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <a href="#home" style="color: var(--text-primary); text-decoration: none; padding: 10px 0;" onclick="closeMobileMenu()">Home</a>
+                <a href="#skills" style="color: var(--text-primary); text-decoration: none; padding: 10px 0;" onclick="closeMobileMenu()">Skills</a>
+                <a href="#projects" style="color: var(--text-primary); text-decoration: none; padding: 10px 0;" onclick="closeMobileMenu()">Projects</a>
+                <a href="#education" style="color: var(--text-primary); text-decoration: none; padding: 10px 0;" onclick="closeMobileMenu()">Education</a>
+                <a href="#contacts" style="color: var(--text-primary); text-decoration: none; padding: 10px 0;" onclick="closeMobileMenu()">Contacts</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="current-position glass-card tilt-card" style="padding: 12px 24px;">
+                <i class="fas fa-briefcase"></i>
+                <span>IT Systems Developer</span>
+            </div>
+
+            <h1 class="tilt-content">Alpheus Lebepe</h1>
+
+            <!-- Typing Animation -->
+            <div class="typing-container">
+                <span class="static-text">I am a</span>
+                <span id="dynamicText" class="dynamic-text">IT Systems Developer</span>
+            </div>
+
+            <p class="hero-subtitle">
+                Diploma in IT Systems Development (2026) | I build and maintain robust IT systems and applications.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="#contacts" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Get In Touch
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                    <i class="fas fa-code-branch"></i> View Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section-->
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Technical <span>Skills</span></h2>
+        
+                <!-- Skill Bars with Animated Progress -->
+                <div class="glass-card" style="padding: 30px; margin-bottom: 30px;">
+                    <h3 style="color: var(--capitec-accent); margin-bottom: 25px; font-size: 1.5rem;">
+                        <i class="fas fa-chart-line"></i> Proficiency Levels
+                    </h3>
+        
+                    <div class="skill-bars-container">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Java Development</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="90%"></div>
+                            </div>
+                        </div>
+        
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Android Development</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="85%"></div>
+                            </div>
+                        </div>
+        
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>SQL & Database</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="88%"></div>
+                            </div>
+                        </div>
+        
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Full Stack Web</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="82%"></div>
+                            </div>
+                        </div>
+        
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>JavaScript/React</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="75%"></div>
+                            </div>
+                        </div>
+        
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>PHP</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="70%"></div>
+                            </div>
+                        </div>
+        
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Node.js</span>
+                                <span class="skill-percent">65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="65%"></div>
+                            </div>
+                        </div>
+        
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Security+</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" data-width="70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Tech Stack Icons -->
+                <div class="glass-card" style="padding: 30px; margin-bottom: 30px;">
+                    <h3 style="color: var(--capitec-accent); margin-bottom: 25px; font-size: 1.5rem;">
+                        <i class="fas fa-cubes"></i> Tech Stack
+                    </h3>
+        
+                    <div class="tech-stack-grid">
+                        <div class="tech-icon tilt-card">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="tech-icon tilt-card">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-icon tilt-card">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-icon tilt-card">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="tech-icon tilt-card">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-icon tilt-card">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-icon tilt-card">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-icon tilt-card">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-icon tilt-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Android</span>
+                        </div>
+                        <div class="tech-icon tilt-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security+</span>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Skill Heatmap -->
+                <div class="glass-card" style="padding: 30px;">
+                    <h3 style="color: var(--capitec-accent); margin-bottom: 25px; font-size: 1.5rem;">
+                        <i class="fas fa-fire"></i> Skill Strength Heatmap
+                    </h3>
+        
+                    <div class="heatmap-container">
+                        <div class="heatmap-row">
+                            <span class="heatmap-label">Java</span>
+                            <div class="heatmap-cells">
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #B0C4DE;"></div>
+                            </div>
+                        </div>
+        
+                        <div class="heatmap-row">
+                            <span class="heatmap-label">Android</span>
+                            <div class="heatmap-cells">
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #B0C4DE;"></div>
+                            </div>
+                        </div>
+        
+                        <div class="heatmap-row">
+                            <span class="heatmap-label">SQL</span>
+                            <div class="heatmap-cells">
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #B0C4DE;"></div>
+                            </div>
+                        </div>
+        
+                        <div class="heatmap-row">
+                            <span class="heatmap-label">Full Stack</span>
+                            <div class="heatmap-cells">
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #B0C4DE;"></div>
+                                <div class="heatmap-cell" style="background: #B0C4DE;"></div>
+                                <div class="heatmap-cell" style="background: #D3D3D3;"></div>
+                            </div>
+                        </div>
+        
+                        <div class="heatmap-row">
+                            <span class="heatmap-label">JavaScript</span>
+                            <div class="heatmap-cells">
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #B0C4DE;"></div>
+                                <div class="heatmap-cell" style="background: #B0C4DE;"></div>
+                                <div class="heatmap-cell" style="background: #D3D3D3;"></div>
+                                <div class="heatmap-cell" style="background: #D3D3D3;"></div>
+                            </div>
+                        </div>
+        
+                        <div class="heatmap-row">
+                            <span class="heatmap-label">Security+</span>
+                            <div class="heatmap-cells">
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #0052A5;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #7F9FBF;"></div>
+                                <div class="heatmap-cell" style="background: #B0C4DE;"></div>
+                                <div class="heatmap-cell" style="background: #B0C4DE;"></div>
+                                <div class="heatmap-cell" style="background: #D3D3D3;"></div>
+                                <div class="heatmap-cell" style="background: #D3D3D3;"></div>
+                                <div class="heatmap-cell" style="background: #D3D3D3;"></div>
+                                <div class="heatmap-cell" style="background: #D3D3D3;"></div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div style="display: flex; justify-content: flex-end; margin-top: 20px; gap: 15px; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <div style="width: 18px; height: 18px; background: #0052A5; border-radius: 4px;"></div>
+                            <span style="color: var(--text-secondary); font-size: 0.85rem;">Expert</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <div style="width: 18px; height: 18px; background: #7F9FBF; border-radius: 4px;"></div>
+                            <span style="color: var(--text-secondary); font-size: 0.85rem;">Advanced</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <div style="width: 18px; height: 18px; background: #B0C4DE; border-radius: 4px;"></div>
+                            <span style="color: var(--text-secondary); font-size: 0.85rem;">Intermediate</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <div style="width: 18px; height: 18px; background: #D3D3D3; border-radius: 4px;"></div>
+                            <span style="color: var(--text-secondary); font-size: 0.85rem;">Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+</body>
+
+</html>
