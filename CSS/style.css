@@ -324,3 +324,51 @@ header {
     margin-bottom: 25px;
     font-size: 0.95rem;
 }
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--capitec-blue), var(--capitec-accent));
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 82, 165, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 164, 224, 0.568);
+}
+
+.btn-secondary {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--capitec-accent);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background: var(--capitec-accent);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
