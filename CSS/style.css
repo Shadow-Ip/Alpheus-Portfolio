@@ -1,20 +1,58 @@
-
 /* ========= Alpheus Portfolio CSS ========= */
 
+/* ======== Color Variables ======== */
+:root {
+    /* Supporting Colors */
+    --prmary-dark: #0A1929;
+    --primary-blue: #0052A5;
+    --secondary-blue: #00A3E0;
+    --accent-blue: #00A3E0;
+    --light-blue: #E6F3FF;
+
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 8px 32px rgba(0, 82, 165, 0.15);
+
+    /* Text Colors 
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.85);
+    --text-muted: rgba(255, 255, 255, 0.65);*/
+
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Mode */
+.light-mode {
+    --primary-dark: #F5F9FF;
+    --primary-blue: #0052A5;
+    --secondary-blue: #0072CE;
+    --accent-blue: #00A3E0;
+    --light-blue: #E6F3FF;
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(0, 82, 165, 0.15);
+    --text-primary: #0A1929;
+    --text-secondary: #1E3A5F;
+    --text-muted: #4A5C6E;
+    --glass-shadow: 0 8px 32px rgba(0, 82, 165, 0.08);
+}
+
 /* ========= Global Styles ======== */
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
 
-body{
+body {
     font-family: 'Inter', sans-serif;
     background: var(--primary-dark);
     color: var(--text-primary);
@@ -26,7 +64,7 @@ body{
 }
 
 /* ========= Particles Background ========= */
-#particles-canvas{
+#particles-canvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -34,4 +72,113 @@ body{
     height: 100%;
     z-index: -1;
     pointer-events: none;
+}
+
+/* ===== TYPING ANIMATION ===== */
+.typing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.static-text {
+    color: var(--text-secondary);
+    margin-right: 0.5rem;
+}
+
+.dynamic-text {
+    color: var(--capitec-accent);
+    font-weight: 700;
+    border-right: 3px solid var(--capitec-accent);
+    padding-right: 5px;
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--capitec-accent);
+    }
+}
+
+/* ===== 3D TILT EFFECT - DISABLED ON MOBILE ===== */
+.tilt-card {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: var(--transition);
+}
+
+@media (hover: hover) {
+    .tilt-card:hover {
+        transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    }
+}
+
+.tilt-content {
+    transform: translateZ(20px);
+}
+
+/* ===== GLASS MORPHISM ===== */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+    transition: var(--transition-slow);
+}
+
+.glass-card:hover {
+    border-color: var(--capitec-accent);
+    box-shadow: 0 12px 48px rgba(0, 163, 224, 0.2);
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+section {
+    padding: 60px 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    color: var(--text-primary);
+}
+
+.section-title span {
+    color: var(--capitec-accent);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--capitec-blue), var(--capitec-accent));
+    border-radius: 2px;
 }
