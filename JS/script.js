@@ -223,7 +223,9 @@ function showNotification(message, type) {
                         block: 'start'
                     });
                     // Close mobile menu if open
-                    closeMobileMenu();
+                    if (typeof closeMobileMenu === "function") {
+                        closeMobileMenu();
+                    }
                 }
             });
         });
