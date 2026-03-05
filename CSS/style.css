@@ -878,3 +878,48 @@ footer {
         height: 220px;
     }
 }
+
+/* ===== REPOSITORY CARDS ===== */
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.repo-card {
+    padding: 25px;
+}
+
+.repo-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.repo-header i {
+    font-size: 1.8rem;
+    color: var(--capitec-accent);
+}
+
+.repo-header h3 {
+    font-size: 1.2rem;
+}
+
+.repo-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--glass-border);
+    flex-wrap: wrap;
+}
+
+.repo-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
