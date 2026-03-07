@@ -64,7 +64,7 @@ function toggleMobileMenu() {
         const texts = [
             'IT Systems Developer',
             'Android Developer', 
-            'Full Stack Developer',
+            'Full-Stack Developer',
             'Database Specialist'
         ];
         let textIndex = 0;
