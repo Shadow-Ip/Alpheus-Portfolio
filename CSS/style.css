@@ -621,9 +621,7 @@ header {
     color:rgba(221, 18, 18, 0.747);
 }
 
-.fa-github {
-    color: white;
-}
+
 
 /* ===== SKILL HEATMAP ===== 
 .heatmap-container {
@@ -683,10 +681,6 @@ header {
     }
 } */
 
-.repo-card {
-    position: relative;
-    padding-bottom: 50px;
-}
 
 /* GitHub icon position */
 
@@ -707,7 +701,7 @@ header {
 
 /* Light mode */
 
-.light-mode .fa-github {
+body.light-mode .repo-github {
     color: black;
 }
 
@@ -716,8 +710,8 @@ header {
     margin-top: 15px;
     padding: 8px 14px;
     background: transparent;
-    color: white;
-    border-radius: 6px;
+    
+    
     backdrop-filter: blur(23);
     font-size: 0.9rem;
     text-decoration: none;
