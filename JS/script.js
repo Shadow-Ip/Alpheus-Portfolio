@@ -344,35 +344,18 @@ function showNotification(message, type) {
         });
 
         // ===== Scroll Reveal Animation =====
+
+
+// ===== SCROLL REVEAL =====
 const revealElements = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
-
     entries.forEach(entry => {
-
         if (entry.isIntersecting) {
-
-            const parent = entry.target.parentElement;
-            const siblings = [...parent.children];
-
-            siblings.forEach((el, index) => {
-
-                if (el.classList.contains("reveal")) {
-
-                    setTimeout(() => {
-                        el.classList.add("active");
-                    }, index * 400); // slower reveal
-
-                }
-
-            });
-
+            entry.target.classList.add('active');
             revealObserver.unobserve(entry.target);
-
         }
-
     });
-
-}, { threshold: 0.2 });
+}, { threshold: 0.15 });
 
 revealElements.forEach(el => revealObserver.observe(el));

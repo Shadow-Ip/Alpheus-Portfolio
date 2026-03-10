@@ -571,8 +571,7 @@ header {
 }
 
 .tech-icon:hover {
-    transform: translateY(-6px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(-6px);    
     border-color: var(--capitec-accent);
     background: rgba(0, 163, 224, 0.1);
 }
@@ -690,12 +689,36 @@ header {
 
 
 /* ===== PROJECTS SECTION AND REPOSITORY CARDS ===== */
+/* Base card styling */
 .repo-card {
+    position: relative;
+    /* for GitHub icon */
     padding: 25px;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0);
+
+    transition:
+        transform 0.8s ease,
+        opacity 1s ease,
+        filter 1s ease,
+        box-shadow 0.6s ease,
+        border-color 0.6s ease;
 }
-.repo-card:hover {
-    transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateY(-30px);
-    transition: transform 0.8s ease;
+
+/* Tilt effect on hover */
+@media (hover: hover) {
+    .repo-card:hover {
+        transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateY(-30px);
+        border-color: var(--capitec-accent);
+        box-shadow: 0 12px 48px rgba(0, 163, 224, 0.2);
+    }
 }
 
 
@@ -771,6 +794,18 @@ header {
     margin-top: 50px;
 }
 
+/* ===== SCROLL REVEAL ANIMATION ===== */
+
+.reveal {
+    opacity: 0;
+    filter: blur(6px);   
+    will-change: opacity;
+}
+
+.reveal.active {
+    opacity: 1;
+    filter: blur(0);
+}
 
 
 
@@ -1131,16 +1166,4 @@ footer {
 }
 
 
-/* ===== SCROLL REVEAL ANIMATION ===== */
 
-.reveal {
-    opacity: 0;
-    filter: blur(6px);
-    transition: opacity 1s ease, filter 1s ease;
-    will-change: opacity;
-}
-
-.reveal.active {
-    opacity: 1;
-    filter: blur(0);
-}
