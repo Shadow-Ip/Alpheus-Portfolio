@@ -94,8 +94,62 @@ function toggleMobileMenu() {
             }
         }
         setTimeout(typeEffect, 1000);
-        
+/*
 // ============= Animated Skill Bars Logic ===============
+function animateSkillBars() {
+    const bars = document.querySelectorAll('.skill-bar-fill');
+
+    bars.forEach(bar => {
+        const width = bar.dataset.width;
+        bar.style.width = width;
+    });
+}
+// Trigger skill bar animation when section is visible
+const skillsSection = document.getElementById('skills');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            animateSkillBars();
+
+            // stop observing once animated
+            observer.unobserve(entry.target);
+        }
+
+    });
+}, {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+});
+
+observer.observe(skillsSection);
+
+// Mobile fallback
+window.addEventListener("load", () => {
+
+    if (window.innerWidth <= 768) {
+        animateSkillBars();
+    }
+
+});
+
+// Prevent animation from running multiple times
+let skillsAnimated = false;
+
+function animateSkillBars() {
+
+    if (skillsAnimated) return;
+
+    const bars = document.querySelectorAll('.skill-bar-fill');
+
+    bars.forEach(bar => {
+        const width = bar.dataset.width;
+        bar.style.width = width;
+    });
+
+    skillsAnimated = true;
+}*/
 
 let skillsAnimated = false;
 
@@ -290,7 +344,6 @@ function showNotification(message, type) {
         });
 
         // ===== Scroll Reveal Animation =====
-
 const revealElements = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -298,31 +351,28 @@ const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
 
         if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            revealObserver.unobserve(entry.target); // animate once only
+
+            const parent = entry.target.parentElement;
+            const siblings = [...parent.children];
+
+            siblings.forEach((el, index) => {
+
+                if (el.classList.contains("reveal")) {
+
+                    setTimeout(() => {
+                        el.classList.add("active");
+                    }, index * 400); // slower reveal
+
+                }
+
+            });
+
+            revealObserver.unobserve(entry.target);
+
         }
 
     });
 
-}, {
-    threshold: 0.15
-});
+}, { threshold: 0.2 });
 
 revealElements.forEach(el => revealObserver.observe(el));
-
-
-// ===== FIX: trigger reveal for elements already visible on load =====
-
-window.addEventListener("load", () => {
-
-    revealElements.forEach(el => {
-
-        const rect = el.getBoundingClientRect();
-
-        if (rect.top < window.innerHeight) {
-            el.classList.add("active");
-        }
-
-    });
-
-});

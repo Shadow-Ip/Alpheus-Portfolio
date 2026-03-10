@@ -119,7 +119,7 @@ body {
     }
 }
 
-/* ===== 3D TILT EFFECT - DISABLED ON MOBILE ===== */
+/* ===== 3D TILT EFFECT  ===== */
 .tilt-card {
     transform-style: preserve-3d;
     transform: perspective(1000px);
@@ -571,7 +571,8 @@ header {
 }
 
 .tech-icon:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
     border-color: var(--capitec-accent);
     background: rgba(0, 163, 224, 0.1);
 }
@@ -597,7 +598,8 @@ header {
     color: #777BB3;
 }
 
-.fa-database, .fa-shield-alt {
+.fa-database,
+.fa-shield-alt {
     color: #077fb6;
 }
 
@@ -613,12 +615,13 @@ header {
     color: #61DAFB;
 }
 
-.fa-node-js, .fa-android {
+.fa-node-js,
+.fa-android {
     color: #339933;
 }
 
-.fa-lock{
-    color:rgba(221, 18, 18, 0.747);
+.fa-lock {
+    color: rgba(221, 18, 18, 0.747);
 }
 
 
@@ -687,9 +690,12 @@ header {
 
 
 /* ===== PROJECTS SECTION AND REPOSITORY CARDS ===== */
-
+.repo-card {
+    padding: 25px;
+}
 .repo-card:hover {
-    transform: translateY(-30px);
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateY(-30px);
+    transition: transform 0.8s ease;
 }
 
 
@@ -698,11 +704,9 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     margin-top: 30px;
+    align-items: stretch;
 }
 
-.repo-card {
-    padding: 25px;
-}
 
 .repo-header {
     display: flex;
@@ -718,6 +722,13 @@ header {
 
 .repo-header h3 {
     font-size: 1.2rem;
+    color: var(--capitec-accent);
+}
+
+.repo-header p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 0.97rem;
 }
 
 .repo-stats {
@@ -737,25 +748,28 @@ header {
     font-size: 0.9rem;
 }
 
-.git-icon{
+.git-icon {
     width: 45px;
-        height: 45px;
-        background: var(--glass-bg);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-primary);
-        transition: var(--transition);
-        position: absolute;
-        bottom: 5px;
-        right: 15px;
+    height: 45px;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: var(--transition);
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
 }
 
-.git-icon i{
-    font-size: 1.3rem ;
+.git-icon i {
+    font-size: 1.3rem;
 }
 
+.title-mar {
+    margin-top: 50px;
+}
 
 
 
@@ -1121,20 +1135,12 @@ footer {
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    filter: blur(6px);
+    transition: opacity 1s ease, filter 1s ease;
+    will-change: opacity;
 }
 
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0);
 }
-
-.reveal-delay {
-    transition-delay: 0.1s;
-}
-
-.reveal-delay2 {
-    transition-delay: 0.2s;
-}
-
