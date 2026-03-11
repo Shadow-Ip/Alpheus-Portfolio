@@ -848,13 +848,13 @@ header {
     }
 }
 
-/* ===== FNB BRANDING ===== */
-.fnb-certificate {
+/* ===== SkillTech BRANDING ===== */
+.skilltech-certificate {
     position: relative;
     overflow: hidden;
 }
 
-.fnb-certificate::before {
+.skilltech-certificate::before {
     content: '';
     position: absolute;
     top: 0;
@@ -864,7 +864,7 @@ header {
     background: linear-gradient(180deg, var(--fnb-yellow), var(--capitec-accent));
 }
 
-.fnb-badge {
+.skilltech-badge {
     display: inline-block;
     padding: 4px 12px;
     background: var(--fnb-yellow);
