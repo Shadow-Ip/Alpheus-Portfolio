@@ -839,7 +839,7 @@ header {
 .module-syllabus p {
     font-size: 0.9rem;
     color: var(--text-secondary);
-    margin-top: 15px;    
+    margin-top: 15px;
 }
 
 @media (max-width: 900px) {
@@ -852,6 +852,7 @@ header {
 .skilltech-certificate {
     position: relative;
     overflow: hidden;
+    padding: 25px;
 }
 
 .skilltech-certificate::before {
@@ -864,6 +865,28 @@ header {
     background: linear-gradient(180deg, var(--fnb-yellow), var(--capitec-accent));
 }
 
+.skilltech-certificate p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.skilltech-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skilltech-wrapper span {
+    background: var(--fnb-yellow);
+    color: var(--fnb-dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
 .skilltech-badge {
     display: inline-block;
     padding: 4px 12px;
@@ -874,6 +897,29 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.h3-skilltech {
+    color: var(--capitec-accent);
+    font-size: 1.3rem;
+    margin-top: 8px;
+}
+
+.skill-d {
+    margin-top: 25px;
+}
+
+.skill-d h4 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .skill-tag {
