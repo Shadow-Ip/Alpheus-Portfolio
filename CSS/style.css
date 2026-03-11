@@ -922,9 +922,10 @@ header {
     gap: 8px;
 }
 
-.skill-tag {
-    background: rgba(59, 130, 246, 0.1);
+.skill-tags span {    
+    background: rgba(255, 183, 0, 0.1);
     border: 1px solid rgba(59, 130, 246, 0.3);
+    border-color: var(--fnb-yellow);
     padding: 6px 14px;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -932,7 +933,7 @@ header {
     display: inline-block;
 }
 
-.skill-tag:hover {
+.skill-tags span:hover {
     background: rgba(59, 130, 246, 0.2);
     transform: translateY(-3px);
 }
