@@ -1093,31 +1093,28 @@ header {
 
 /* CONTACT INTRO */
 
-.contact-intro h2 {
+.contact-intro1 h3 {
     font-size: 1.5rem;
-    color: var(--capitec-accent);
-    margin-bottom: 10px;
+    color: var(--capitec-accent);    
     text-align: center;
     position: relative;
 }
 
-.contact-intro p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin-bottom: 15px;
+.contact-intro1 p{
+    margin-bottom: 5px;
 }
 
-.contact-intro h4 {
-    margin-top: 10px;
+.contact-intro h1 {
     margin-bottom: 5px;
-    color: var(--text-primary);
+    color: var(--capitec-accent);
     text-align: center;
     position: relative;
 }
 
 .contact-sub {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 20px;
+    color: var(--text-secondary);
 }
 
 .contact-form:hover {
