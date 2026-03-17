@@ -433,7 +433,5 @@ btn.style.transform = `translate(${x * strength}px, ${y * strength}px) scale(1.0
 btn.addEventListener("mouseleave", () => {
 
 btn.style.transform = "translate(0, 0) scale(1)";
-
 });
-
 });
