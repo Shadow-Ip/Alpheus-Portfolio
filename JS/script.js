@@ -95,14 +95,6 @@ function toggleMobileMenu() {
         }
         setTimeout(typeEffect, 1000);
 
-
-
-
-// ============== Mudule Explorer Logic ================
-function toggleModule(module){
-    module.classList.toggle('active');
-}
-
 // ============== Notification System Logic ================
 function showNotification(message, type) {
     // Remove existing notification
