@@ -763,6 +763,7 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
     margin-top: 30px;
+    align-items: stretch;
 }
 .education-jus {
     display: flex;
@@ -946,8 +947,97 @@ header {
     position: absolute;
         bottom: 5px;
         right: 15px;
+}/*
+.certificate-image {
+    margin-top: 15px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px;
+    border-radius: 12px;
 }
 
+.certificate-image img {
+    width: 100%;
+    height: 310px;
+    display: block;
+    object-fit: fill;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+/* nice subtle hover effect 
+.certificate-image:hover img {
+    transform: scale(1.05);
+}*/
+
+.certificate-image {
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 163, 224, 0.08);
+    transition: all 0.35s ease;
+}
+
+/* gradient glow layer */
+.certificate-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    background: radial-gradient(circle at center,
+            rgba(0, 163, 224, 0.25),
+            transparent 70%);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+/* IMAGE */
+.certificate-image img {
+    width: 100%;
+    height: 310px;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+/*  HOVER EFFECT */
+.certificate-image:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(0, 163, 224, 0.2);
+    border-color: var(--capitec-accent);
+}
+
+.certificate-image:hover::before {
+    opacity: 1;
+}
+
+.certificate-image:hover img {
+    transform: scale(1.08);
+}
+
+.certificate-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.637),
+            transparent);
+    transition: 0.6s;
+}
+
+.certificate-image:hover::after {
+    left: 120%;
+}
 /* ===== SkillTech BRANDING ===== */
 .skilltech-certificate {
     position: relative;
@@ -1043,7 +1133,11 @@ header {
     transform: translateY(-3px);
 }
 
-
+.edu-card{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
 .edu-card:hover {
     transform: translateY(-20px);
