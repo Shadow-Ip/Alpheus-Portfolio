@@ -930,6 +930,24 @@ header {
     }
 }
 
+.btn2 {
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    position: absolute;
+        bottom: 5px;
+        right: 15px;
+}
+
 /* ===== SkillTech BRANDING ===== */
 .skilltech-certificate {
     position: relative;
