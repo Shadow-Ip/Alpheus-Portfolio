@@ -765,6 +765,7 @@ header {
     margin-top: 30px;
     align-items: stretch;
 }
+
 .education-jus {
     display: flex;
     justify-content: space-between;
@@ -945,8 +946,8 @@ header {
     gap: 10px;
     border: none;
     position: absolute;
-        bottom: 5px;
-        right: 15px;
+    bottom: 5px;
+    right: 15px;
 }
 
 .certificate-image {
@@ -1017,6 +1018,7 @@ header {
 .certificate-image:hover::after {
     left: 120%;
 }
+
 /* ===== SkillTech BRANDING ===== */
 .skilltech-certificate {
     position: relative;
@@ -1112,7 +1114,7 @@ header {
     transform: translateY(-3px);
 }
 
-.edu-card{
+.edu-card {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1124,12 +1126,14 @@ header {
 }
 
 /* ===== MODAL BACKGROUND ===== */
-.cert-modal, .bpmn-modal {
+.cert-modal,
+.bpmn-modal {
     display: none;
     position: fixed;
     z-index: 9999;
     inset: 0;
-    max-width: 70%;
+    width: 100%;
+    height: 100%;
     border-radius: 30px;
     background: rgba(0, 0, 0, 0.938);
     -webkit-backdrop-filter: blur(10px);
@@ -1141,7 +1145,8 @@ header {
 }
 
 /* ===== MODAL IMAGE ===== */
-.cert-modal-content, .bpmn-modal-content{
+.cert-modal-content,
+.bpmn-modal-content {
     max-width: 90%;
     max-height: 85%;
     border-radius: 14px;
@@ -1152,7 +1157,8 @@ header {
 }
 
 /* ===== CLOSE BUTTON ===== */
-.cert-close, .bpmn-close {
+.cert-close,
+.bpmn-close {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -1162,7 +1168,8 @@ header {
     transition: 0.3s;
 }
 
-.cert-close:hover, .bpmn-close:hover {
+.cert-close:hover,
+.bpmn-close:hover {
     color: var(--capitec-accent);
     transform: scale(1.2);
 }
@@ -1190,6 +1197,22 @@ header {
     }
 }
 
+@media (max-width: 768px) {
+
+    .cert-modal-content,
+    .bpmn-modal-content {
+        max-width: 95%;
+        max-height: 80vh;
+        touch-action: none;
+    }
+
+    .cert-close,
+    .bpmn-close {
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+    }
+}
 /* ===== CONTACT SECTION ===== */
 
 .contact-container {
@@ -1216,7 +1239,7 @@ header {
     cursor: default;
 }
 
-.pad-contact p{
+.pad-contact p {
     cursor: default;
 }
 
@@ -1916,27 +1939,37 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding-top: 20px;
 }
 
 /* IMAGE */
 .case-image {
-    border-radius: 14px;
+    border-radius: 15px;
     overflow: hidden;
-    border: 1px solid var(--glass-border);
+    border: 2px solid var(--glass-border);
     background: rgba(255, 255, 255, 0.05);
     position: relative;
+    box-shadow: 0 10px 30px rgba(0, 163, 224, 0.08);
     cursor: zoom-in;
+    transition: all 0.35s ease;
 }
 
 .case-image img {
     width: 100%;
     height: 100%;
+    border-radius: 15px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
 .case-image:hover img {
     transform: scale(1.05);
+}
+
+.case-image:hover {
+    box-shadow: 0 20px 50px rgba(0, 163, 224, 0.2);
+    border-color: var(--capitec-accent);
+    transform: translateY(-6px) scale(1.01);
 }
 
 /* BUTTON */
